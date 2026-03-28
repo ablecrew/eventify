@@ -1,0 +1,34 @@
+[build]
+  command   = "npm run build"
+  publish   = "dist/public"           
+  functions = "dist/netlify/functions"
+
+[functions]
+  external_node_modules = [
+    "express", 
+    "@prisma/client", 
+    "@neondatabase/serverless",
+    "@prisma/adapter-neon",
+    "bcryptjs",
+    "cookie-parser",
+    "cors",
+    "jsonwebtoken",
+    "date-fns"
+  ]
+  node_bundler = "esbuild"
+  
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/express/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/"
+  to = "/pages/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/pages/index.html"
+  status = 200

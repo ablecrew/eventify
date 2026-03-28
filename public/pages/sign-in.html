@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Eventify | Sign In</title>
+    <link rel="icon" href="../favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="../css/registration-pages.css"
+    />
+    <!-- notyf -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf/notyf.min.css" />
+    <script type="module" src="../main.js"></script>
+  </head>
+  <body>
+    <div
+      class="container"
+      style="
+        background: url('../assets/images/concert-main.jpg') center center /
+          cover no-repeat;
+      "
+    >
+      <div
+        class="image-mobile"
+        style="
+          background: url('../assets/images/concert-main.jpg') center 62% /
+            cover no-repeat;
+        "
+      ></div>
+      <div class="left">
+        <div class="left-content">
+          <div class="logo">
+            <a href="../pages/index.html">
+              <img
+                class="logo-ticket"
+                src="../assets/icons/ticket.png"
+              />Eventify
+            </a>
+          </div>
+          <p class="tagline">
+            Welcome back — your next big night out starts here.
+          </p>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="form-container">
+          <div class="logo-mobile">
+            <a href="../pages/index.html">
+              <img
+                class="logo-ticket"
+                src="../assets/icons/ticket.png"
+              />Eventify
+            </a>
+          </div>
+          <h2 class="form-heading">Sign In</h2>
+          <form id="sign_in_form" autocomplete="off" novalidate="novalidate">
+            <div class="form-group">
+              <label class="form-label" for="email">E-mail</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="form-input"
+                placeholder="Enter your e-mail"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="password">Password</label>
+              <div class="password-field">
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  class="form-input"
+                  placeholder="Enter password"
+                />
+                <img class="eye-icon" src="../assets/icons/eye.png"/>
+              </div>
+            </div>
+            <button type="submit" class="submit-btn">Sign In</button>
+            <p class="login-link">
+              Don&apos;t have an account? <a href="./sign-up.html">Sign Up</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf/notyf.min.js"></script>
+    <script src="../scripts/sign-in-form.js"></script>
+  </body>
+</html>

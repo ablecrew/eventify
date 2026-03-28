@@ -1,0 +1,200 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+// npx prisma generate
+// npx prisma migrate dev --name init
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(uuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  isAdmin      Boolean  @default(false)
+  createdAt    DateTime @default(now())
+
+  sessions     Session[]
+  events       Event[]             @relation("OrganizerEvents")
+  purchases    Purchase[]
+  tickets      Ticket[]
+  savedEvents  SavedEvent[]
+  discountUses DiscountCodeUsage[]
+
+  @@map("users")
+}
+
+model Session {
+  id        String   @id @default(uuid())
+  userId    String
+  expiresAt DateTime
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@map("sessions")
+}
+
+enum EventCategory {
+  concert
+  art
+  expo
+  festival
+  comedy
+  food_drink
+  club
+  sport
+  auto_show
+  agriculture
+  conference
+  general
+}
+
+enum EventType {
+  single_day
+  recurring
+}
+
+model Event {
+  id          String        @id @default(uuid())
+  organizer   User          @relation("OrganizerEvents", fields: [organizerId], references: [id])
+  organizerId String
+  title       String
+  description String
+  category    EventCategory
+  location    String
+  imageUrl    String
+  eventType   EventType
+  isFree      Boolean
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  occurrences   EventOccurrence[]
+  ticketTypes   TicketType[]
+  tickets       Ticket[]
+  discountCodes DiscountCode[]
+  savedBy       SavedEvent[]
+
+  @@map("events")
+}
+
+model EventOccurrence {
+  id        String   @id @default(uuid())
+  event     Event    @relation(fields: [eventId], references: [id])
+  eventId   String
+  startTime DateTime
+  endTime   DateTime
+  date      DateTime
+  createdAt DateTime @default(now())
+
+  tickets Ticket[]
+
+  @@map("event_occurrences")
+}
+
+model TicketType {
+  id            String   @id @default(uuid())
+  event         Event    @relation(fields: [eventId], references: [id])
+  eventId       String
+  name          String
+  price         Decimal
+  quantityTotal Int
+  quantitySold  Int
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  tickets Ticket[]
+
+  @@map("ticket_types")
+}
+
+model Purchase {
+  id             String        @id @default(uuid())
+  user           User          @relation(fields: [userId], references: [id])
+  userId         String
+  totalPrice     Decimal
+  purchasedAt    DateTime      @default(now())
+  discountCode   DiscountCode? @relation(fields: [discountCodeId], references: [id])
+  discountCodeId String?
+
+  tickets        Ticket[]
+  discountUsages DiscountCodeUsage[]
+
+  @@map("purchases")
+}
+
+enum TicketStatus {
+  valid
+  used
+  cancelled
+  refunded
+}
+
+model Ticket {
+  id                String          @id @default(uuid())
+  purchase          Purchase?       @relation(fields: [purchaseId], references: [id])
+  purchaseId        String?
+  user              User            @relation(fields: [userId], references: [id])
+  userId            String
+  event             Event           @relation(fields: [eventId], references: [id])
+  eventId           String
+  eventOccurrence   EventOccurrence @relation(fields: [eventOccurrenceId], references: [id])
+  eventOccurrenceId String
+  ticketType        TicketType      @relation(fields: [ticketTypeId], references: [id])
+  ticketTypeId      String
+  barcodeValue      String
+  status            TicketStatus
+  issuedAt          DateTime
+  usedAt            DateTime?
+
+  @@map("tickets")
+}
+
+model SavedEvent {
+  id        String   @id @default(uuid())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  event     Event    @relation(fields: [eventId], references: [id])
+  eventId   String
+  createdAt DateTime @default(now())
+
+  @@unique([userId, eventId])
+  @@map("saved_events")
+}
+
+model DiscountCode {
+  id              String   @id @default(uuid())
+  event           Event    @relation(fields: [eventId], references: [id])
+  eventId         String
+  codeHash        String
+  discountPercent Int
+  validTill       DateTime
+  createdAt       DateTime @default(now())
+
+  purchases Purchase[]
+  usages    DiscountCodeUsage[]
+
+  @@map("discount_codes")
+}
+
+model DiscountCodeUsage {
+  id             String       @id @default(uuid())
+  discountCode   DiscountCode @relation(fields: [discountCodeId], references: [id])
+  discountCodeId String
+  user           User         @relation(fields: [userId], references: [id])
+  userId         String
+  purchase       Purchase     @relation(fields: [purchaseId], references: [id])
+  purchaseId     String
+  usedAt         DateTime
+
+  @@map("discount_codes_usages")
+}

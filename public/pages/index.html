@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Eventify</title>
+    <link rel="icon" href="../favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../main.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="../css/home-page.css"
+    />
+    <!-- notyf -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notyf/notyf.min.css"
+    />
+    <script type="module" src="../main.js"></script>
+  </head>
+  <body>
+    <div id="navbar-container"></div>
+
+    <main>
+      <section class="home-page-intro">
+        <div class="intro-content">
+          <h2 id="first-tagline">Explore. New Experiences</h2>
+          <h1 id="primary-content">concerts / <span>art</span></h1>
+          <h2 id="second-tagline">
+            Events You&apos;ll Never Forget. For everyone
+          </h2>
+        </div>
+      </section>
+
+      <section class="categories-section">
+        <div class="categories-container">
+          <h1>Browse by category</h1>
+          <div class="categories-wrapper">
+            <div class="category-container">
+              <a href="./event-categories.html?category=concerts">
+                <img src="../assets/icons/concerts.png" />
+                <h3>Concerts</h3>
+              </a>
+            </div>
+            <div class="category-container">
+              <a href="./event-categories.html?category=art">
+                <img src="../assets/icons/art.png" />
+                <h3>Art</h3>
+              </a>
+            </div>
+            <div class="category-container">
+              <a href="./event-categories.html?category=food_drink">
+                <img src="../assets/icons/food-&-drink.png" />
+                <h3>Food & Drink</h3>
+              </a>
+            </div>
+            <div class="category-container">
+              <a href="./event-categories.html?category=clubs">
+                <img src="../assets/icons/clubs.png" />
+                <h3>Clubs</h3>
+              </a>
+            </div>
+            <div class="category-container">
+              <a href="./event-categories.html?category=festival">
+                <img src="../assets/icons/festival.png" />
+                <h3>Festivals</h3>
+              </a>
+            </div>
+            <div class="category-container">
+              <a href="./event-categories.html?category=comedy">
+                <img src="../assets/icons/comedy.png" />
+                <h3>Comedy</h3>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="events-section">
+        <h2 class="event-section-title">Popular Events</h2>
+        <div class="events-grid" id="events-container">
+          <!-- Event cards will be dynamically inserted here -->
+          <!-- Loading placeholder can be shown initially -->
+          <div class="event-card">
+            <div class="skeleton-image skeleton"></div>
+            <div class="skeleton-details">
+              <div class="skeleton-title skeleton"></div>
+              <div class="skeleton-category skeleton"></div>
+              <div class="skeleton-info">
+                <div class="skeleton-date">
+                  <div class="skeleton-month skeleton"></div>
+                  <div class="skeleton-day skeleton"></div>
+                </div>
+                <div class="skeleton-location-time">
+                  <div class="skeleton-location skeleton"></div>
+                  <div class="skeleton-time skeleton"></div>
+                </div>
+              </div>
+              <div class="skeleton-price-section">
+                <div class="skeleton-price skeleton"></div>
+                <div class="skeleton-view skeleton"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-card">
+            <div class="skeleton-image skeleton"></div>
+            <div class="skeleton-details">
+              <div class="skeleton-title skeleton"></div>
+              <div class="skeleton-category skeleton"></div>
+              <div class="skeleton-info">
+                <div class="skeleton-date">
+                  <div class="skeleton-month skeleton"></div>
+                  <div class="skeleton-day skeleton"></div>
+                </div>
+                <div class="skeleton-location-time">
+                  <div class="skeleton-location skeleton"></div>
+                  <div class="skeleton-time skeleton"></div>
+                </div>
+              </div>
+              <div class="skeleton-price-section">
+                <div class="skeleton-price skeleton"></div>
+                <div class="skeleton-view skeleton"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-card">
+            <div class="skeleton-image skeleton"></div>
+            <div class="skeleton-details">
+              <div class="skeleton-title skeleton"></div>
+              <div class="skeleton-category skeleton"></div>
+              <div class="skeleton-info">
+                <div class="skeleton-date">
+                  <div class="skeleton-month skeleton"></div>
+                  <div class="skeleton-day skeleton"></div>
+                </div>
+                <div class="skeleton-location-time">
+                  <div class="skeleton-location skeleton"></div>
+                  <div class="skeleton-time skeleton"></div>
+                </div>
+              </div>
+              <div class="skeleton-price-section">
+                <div class="skeleton-price skeleton"></div>
+                <div class="skeleton-view skeleton"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-card">
+            <div class="skeleton-image skeleton"></div>
+            <div class="skeleton-details">
+              <div class="skeleton-title skeleton"></div>
+              <div class="skeleton-category skeleton"></div>
+              <div class="skeleton-info">
+                <div class="skeleton-date">
+                  <div class="skeleton-month skeleton"></div>
+                  <div class="skeleton-day skeleton"></div>
+                </div>
+                <div class="skeleton-location-time">
+                  <div class="skeleton-location skeleton"></div>
+                  <div class="skeleton-time skeleton"></div>
+                </div>
+              </div>
+              <div class="skeleton-price-section">
+                <div class="skeleton-price skeleton"></div>
+                <div class="skeleton-view skeleton"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-card">
+            <div class="skeleton-image skeleton"></div>
+            <div class="skeleton-details">
+              <div class="skeleton-title skeleton"></div>
+              <div class="skeleton-category skeleton"></div>
+              <div class="skeleton-info">
+                <div class="skeleton-date">
+                  <div class="skeleton-month skeleton"></div>
+                  <div class="skeleton-day skeleton"></div>
+                </div>
+                <div class="skeleton-location-time">
+                  <div class="skeleton-location skeleton"></div>
+                  <div class="skeleton-time skeleton"></div>
+                </div>
+              </div>
+              <div class="skeleton-price-section">
+                <div class="skeleton-price skeleton"></div>
+                <div class="skeleton-view skeleton"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-card">
+            <div class="skeleton-image skeleton"></div>
+            <div class="skeleton-details">
+              <div class="skeleton-title skeleton"></div>
+              <div class="skeleton-category skeleton"></div>
+              <div class="skeleton-info">
+                <div class="skeleton-date">
+                  <div class="skeleton-month skeleton"></div>
+                  <div class="skeleton-day skeleton"></div>
+                </div>
+                <div class="skeleton-location-time">
+                  <div class="skeleton-location skeleton"></div>
+                  <div class="skeleton-time skeleton"></div>
+                </div>
+              </div>
+              <div class="skeleton-price-section">
+                <div class="skeleton-price skeleton"></div>
+                <div class="skeleton-view skeleton"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="categories-outro">
+        <ul class="outo-wrapper">
+          <li class="outro-container">
+            <a href="../pages/event-categories.html?category=concerts">
+              <img src="../assets/images/concert-main.jpg" />
+              <h2 class="outro-label">Concerts</h2>
+              <p class="outro-description">
+                Experience the power of live music — where sound, energy, and
+                community come together for nights you&apos;ll never forget.
+              </p>
+              <div class="outro-btn-container">
+                <button class="outro-btn">Explore Now</button>
+              </div>
+            </a>
+          </li>
+
+          <li class="outro-container">
+            <a href="../pages/event-categories.html?category=food_drink">
+              <img src="../assets/images/food-drink-main.jpg" />
+              <h2 class="outro-label">Food & Drink</h2>
+              <p class="outro-description">
+                Indulge in bold flavors, crafted drinks, and cultural bites —
+                because the best memories are made around good food .
+              </p>
+              <div class="outro-btn-container">
+                <button class="outro-btn">Explore Now</button>
+              </div>
+            </a>
+          </li>
+
+          <li class="outro-container">
+            <a href="../pages/event-categories.html?category=art">
+              <img src="../assets/images/art-main.jpg" />
+              <h2 class="outro-label">Art</h2>
+              <p class="outro-description">
+                Step into a world of imagination — where artists, creators, and
+                dreamers share work that moves and inspires.
+              </p>
+              <div class="outro-btn-container">
+                <button class="outro-btn">Explore Now</button>
+              </div>
+            </a>
+          </li>
+
+          <li class="outro-container">
+            <a href="../pages/event-categories.html?category=comedy">
+              <img src="../assets/images/comedy-main.jpg" />
+              <h2 class="outro-label">Comedy</h2>
+              <p class="outro-description">
+                Laugh louder, live lighter — comedy nights made for pure joy,
+                sharp wit, and shared good times.
+              </p>
+              <div class="outro-btn-container">
+                <button class="outro-btn">Explore Now</button>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script type="module" src="../scripts/home-page.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf/notyf.min.js"></script>
+  </body>
+</html>

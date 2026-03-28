@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Eventify | Shopping Cart</title>
+    <link rel="icon" href="../favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="../main.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="../css/shopping-cart-page.css"
+    />
+    <!-- notyf -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notyf/notyf.min.css"
+    />
+    <script type="module" src="../main.js"></script>
+  </head>
+
+  <body>
+    <div id="navbar-container"></div>
+
+    <main class="shopping-cart-page">
+      <section class="shopping-cart-section">
+        <h2>Shopping Cart</h2>
+
+        <!-- Loading state - shown initially -->
+        <div class="cart-loading" id="cart-loading">
+          <div class="loading-spinner"></div>
+          <p>Loading your cart...</p>
+        </div>
+
+        <!-- Empty state - shown when cart is empty -->
+        <div
+          class="empty-cart-state"
+          id="empty-cart-state"
+          style="display: none"
+        >
+          <div class="empty-cart-icon">
+            <img  src="../assets/icons/empty-cart.png" />
+          </div>
+          <h3>Your cart is empty</h3>
+          <p>Looks like you haven't added any events to your cart yet.</p>
+          <a href="./index.html" class="browse-events-btn">Browse Events</a>
+        </div>
+
+        <!-- Cart items container - populated dynamically -->
+        <div class="cart-items-container" id="cart-items-container">
+          <!-- Cart items will be inserted here by JavaScript -->
+        </div>
+      </section>
+
+      <aside class="summary-section">
+        <h3>Order Summary</h3>
+
+        <div class="summary-details">
+          <div class="summary-line">
+            <span>Subtotal</span><span id="subtotal-amount">Ksh 0</span>
+          </div>
+          <div class="summary-line">
+            <span>Estimated Tax</span><span id="tax-amount">Ksh 0</span>
+          </div>
+          <div class="summary-line">
+            <span>Estimated Service Fee</span
+            ><span id="service-fee-amount">Ksh 0</span>
+          </div>
+          <div class="summary-line total">
+            <span>Total</span><span id="total-amount">Ksh 0</span>
+          </div>
+        </div>
+
+        <button class="checkout-btn" id="checkout-btn" disabled>
+          Cart is Empty
+        </button>
+      </aside>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <!-- Include the shopping cart JavaScript -->
+    <script type="module" src="../scripts/shopping-cart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf/notyf.min.js"></script>
+  </body>
+</html>

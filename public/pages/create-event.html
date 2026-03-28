@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Eventify | Create Event</title>
+    <link rel="icon" href="../favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- flatpickr -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <!-- notyf -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notyf/notyf.min.css"
+    />
+    <link rel="stylesheet" type="text/css" media="screen" href="../main.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="../css/create-event-page.css"
+    />
+    <script type="module" src="../main.js"></script>
+  </head>
+  <body>
+    <div id="navbar-container"></div>
+
+    <main>
+      <h1>Create a new event</h1>
+
+      <form id="create_event_form" autocomplete="off" novalidate="novalidate">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" id="title" name="title" placeholder="Title" />
+        </div>
+
+        <div class="form-group">
+          <label for="category">Category</label>
+          <select id="category" name="category">
+            <option value="concert" selected>Concert</option>
+            <option value="art">Art</option>
+            <option value="expo">Expo</option>
+            <option value="festival">Festival</option>
+            <option value="comedy">Comedy</option>
+            <option value="food_drink">Food & Drink</option>
+            <option value="club">Club</option>
+            <option value="sport">Sport</option>
+            <option value="auto_show">Auto Show</option>
+            <option value="agriculture">Agriculture</option>
+            <option value="conference">Conference</option>
+            <option value="general">General</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Event type</label>
+          <div class="event-type-options">
+            <label class="event-type-option">
+              <input
+                type="radio"
+                name="event-type"
+                id="single-event"
+                value="single_day"
+                checked
+              />
+              <span class="radio-circle"></span>
+              <span>Single event</span>
+            </label>
+            <label class="event-type-option">
+              <input
+                type="radio"
+                name="event-type"
+                id="recurring-event"
+                value="recurring"
+              />
+              <span class="radio-circle"></span>
+              <span>Recurring event</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <table class="data-table event-dates-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="first-row">
+                <td>
+                  <div class="input-wrapper date-input">
+                    <div class="icon-container">
+                      <img
+                        src="../assets/icons/calendar.png"
+                        alt="Calendar"
+                        class="input-icon"
+                      />
+                    </div>
+                    <input
+                      type="date"
+                      id="start-date"
+                      name="start-date"
+                      placeholder="Select date"
+                    />
+                  </div>
+                </td>
+                <td>
+                  <div class="input-wrapper time-input">
+                    <div class="icon-container">
+                      <img
+                        src="../assets/icons/clock.png"
+                        alt="Clock"
+                        class="input-icon"
+                      />
+                    </div>
+                    <input
+                      type="time"
+                      id="start-time"
+                      name="start-time"
+                      placeholder="Select time"
+                    />
+                  </div>
+                </td>
+                <td>
+                  <div class="input-wrapper time-input">
+                    <div class="icon-container">
+                      <img
+                        src="../assets/icons/clock.png"
+                        alt="Clock"
+                        class="input-icon"
+                      />
+                    </div>
+                    <input
+                      type="time"
+                      id="end-time"
+                      name="end-time"
+                      placeholder="Select time"
+                    />
+                  </div>
+                </td>
+                <td>
+                  <button type="button" class="remove-button">
+                    <img
+                      class="remove-icon"
+                      src="../assets/icons/minus-circle.png"
+                    />
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <button type="button" class="add-button add-event-date-button">
+            <img class="add-icon" src="../assets/icons/add.png" />
+          </button>
+        </div>
+
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input
+            type="text"
+            id="location"
+            name="location"
+            placeholder="Location"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input
+            type="text"
+            id="description"
+            name="description"
+            placeholder="Description"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="cover">Cover</label>
+          <div class="cover-upload">
+            <input
+              type="file"
+              accept="image/png, image/jpeg, image/jpg"
+              id="cover"
+              name="cover"
+              placeholder="Cover"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Ticket type</label>
+          <div class="ticket-types">
+            <label class="ticket-option selected">
+              <input
+                type="radio"
+                id="ticketed-event"
+                name="ticket-type"
+                value="ticketed"
+                checked
+              />
+              <div class="ticket-icon">
+                <img src="../assets//icons/ticket-large.png" />
+              </div>
+              <div class="ticket-label">Ticketed Event</div>
+              <div class="ticket-description">
+                My event requires tickets for entry
+              </div>
+            </label>
+
+            <label class="ticket-option">
+              <input
+                type="radio"
+                id="free-event"
+                name="ticket-type"
+                value="free"
+              />
+              <div class="ticket-icon">
+                <img src="../assets/icons/free.png" />
+              </div>
+              <div class="ticket-label">Free Event</div>
+              <div class="ticket-description">I'm running a free event</div>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <table class="data-table ticket-types-table">
+            <thead>
+              <tr>
+                <th>Ticket Name</th>
+                <th>Ticket Price</th>
+                <th>Stock</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="first-row">
+                <td>
+                  <input
+                    type="text"
+                    id="ticket-name"
+                    name="ticket-name"
+                    placeholder="Ticket name e.g. General Admission"
+                  />
+                </td>
+                <td>
+                  <div class="input-wrapper">
+                    <div class="icon-container">
+                      <span id="currency"> Ksh </span>
+                    </div>
+                    <input
+                      type="number"
+                      id="ticket-price"
+                      name="ticket-price"
+                      placeholder="0.00"
+                      min="0"
+                    />
+                  </div>
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    id="ticket-stock"
+                    name="ticket-stock"
+                    placeholder="0"
+                    min="1"
+                  />
+                </td>
+                <td>
+                  <button type="button" class="remove-button">
+                    <img
+                      class="remove-icon"
+                      src="../assets/icons/minus-circle.png"
+                    />
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <button type="button" class="add-button add-ticket-type-button">
+            <img class="add-icon" src="../assets/icons/add.png" />
+          </button>
+        </div>
+
+        <div class="form-group">
+          <label>Discount / Promo codes</label>
+
+          <table class="data-table discount-codes-table">
+            <thead>
+              <tr>
+                <th>Discount Code</th>
+                <th>% Off</th>
+                <th>Expiration Date</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="first-row">
+                <td>
+                  <input
+                    type="text"
+                    id="discount-code"
+                    name="discount-code"
+                    placeholder="Code e.g. FFANMIA"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    id="percent-off"
+                    name="percent-off"
+                    placeholder="0.00"
+                    min="0"
+                  />
+                </td>
+                <td>
+                  <div class="input-wrapper">
+                    <div class="icon-container">
+                      <img
+                        src="../assets/icons/calendar.png"
+                        alt="Calendar"
+                        class="input-icon"
+                      />
+                    </div>
+                    <input
+                      type="datetime-local"
+                      id="expiration-date"
+                      name="expiration-date"
+                      placeholder="Select date-time"
+                    />
+                  </div>
+                </td>
+                <td>
+                  <button type="button" class="remove-button">
+                    <img
+                      class="remove-icon"
+                      src="../assets/icons/minus-circle.png"
+                    />
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <button type="button" class="add-button add-discount-code-button">
+            <img class="add-icon" src="../assets/icons/add.png" />
+          </button>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn-cancel">Cancel</button>
+          <button type="submit" class="btn-save">Save & Continue</button>
+        </div>
+      </form>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <!-- event-date-row-template -->
+    <template id="event-date-row-template">
+      <tr>
+        <td>
+          <div class="input-wrapper date-input">
+            <div class="icon-container">
+              <img
+                src="../assets/icons/calendar.png"
+                alt="Calendar"
+                class="input-icon"
+              />
+            </div>
+            <input
+              type="date"
+              id="start-date"
+              name="start-date"
+              placeholder="Select date"
+            />
+          </div>
+        </td>
+        <td>
+          <div class="input-wrapper time-input">
+            <div class="icon-container">
+              <img
+                src="../assets/icons/clock.png"
+                alt="Clock"
+                class="input-icon"
+              />
+            </div>
+            <input
+              type="time"
+              id="start-time"
+              name="start-time"
+              placeholder="Select time"
+            />
+          </div>
+        </td>
+        <td>
+          <div class="input-wrapper time-input">
+            <div class="icon-container">
+              <img
+                src="../assets/icons/clock.png"
+                alt="Clock"
+                class="input-icon"
+              />
+            </div>
+            <input
+              type="time"
+              id="end-time"
+              name="end-time"
+              placeholder="Select time"
+            />
+          </div>
+        </td>
+        <td>
+          <button type="button" class="remove-button">
+            <img class="remove-icon" src="../assets/icons/minus-circle.png" />
+          </button>
+        </td>
+      </tr>
+    </template>
+
+    <!-- ticket-row-template -->
+    <template id="ticket-row-template">
+      <tr>
+        <td>
+          <input
+            type="text"
+            id="ticket-name"
+            name="ticket-name"
+            placeholder="Ticket name e.g. General Admission"
+          />
+        </td>
+        <td>
+          <div class="input-wrapper">
+            <div class="icon-container">
+              <span id="currency"> Ksh </span>
+            </div>
+            <input
+              type="number"
+              id="ticket-price"
+              name="ticket-price"
+              placeholder="0.00"
+              min="0"
+            />
+          </div>
+        </td>
+        <td>
+          <input
+            type="number"
+            id="ticket-stock"
+            name="ticket-stock"
+            placeholder="0"
+            min="1"
+          />
+        </td>
+        <td>
+          <button type="button" class="remove-button">
+            <img class="remove-icon" src="../assets/icons/minus-circle.png" />
+          </button>
+        </td>
+      </tr>
+    </template>
+
+    <!-- discount-row-template -->
+    <template id="discount-row-template">
+      <tr>
+        <td>
+          <input
+            type="text"
+            id="discount-code"
+            name="discount-code"
+            placeholder="Code e.g. FFANMIA"
+          />
+        </td>
+        <td>
+          <input
+            type="number"
+            id="percent-off"
+            name="percent-off"
+            placeholder="0.00"
+            min="0"
+          />
+        </td>
+        <td>
+          <div class="input-wrapper">
+            <div class="icon-container">
+              <img
+                src="../assets/icons/calendar.png"
+                alt="Calendar"
+                class="input-icon"
+              />
+            </div>
+            <input
+              type="datetime-local"
+              id="expiration-date"
+              name="expiration-date"
+              placeholder="Select date-time"
+            />
+          </div>
+        </td>
+        <td>
+          <button type="button" class="remove-button">
+            <img class="remove-icon" src="../assets/icons/minus-circle.png" />
+          </button>
+        </td>
+      </tr>
+    </template>
+
+    <!-- Create event modal -->
+    <div
+      class="event_preview_root modal micromodal-slide"
+      id="preview-modal"
+      aria-hidden="true"
+    >
+      <div
+        class="event_preview_modal_overlay modal__overlay"
+        tabindex="-1"
+        data-micromodal-close
+      >
+        <div
+          class="event_preview_container modal__container preview-modal-container"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="preview-title"
+        >
+          <header class="event_preview_header modal__header">
+            <h2 class="event_preview_title modal__title" id="preview-title">
+              Preview Your Event
+            </h2>
+            <button
+              class="event_preview_close_btn modal__close"
+              aria-label="Close modal"
+              data-micromodal-close
+            >
+              &times;
+            </button>
+          </header>
+
+          <main class="event_preview_content modal__content" id="modal-content">
+            <!-- Dynamic modal content loaded here -->
+          </main>
+
+          <footer class="event_preview_footer modal__footer">
+            <button
+              class="event_preview_btn event_preview_btn_secondary btn btn-secondary"
+              data-micromodal-close
+            >
+              Cancel
+            </button>
+            <button
+              id="confirm-submit"
+              class="event_preview_btn event_preview_btn_primary btn btn-primary"
+            >
+              Create Event
+            </button>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <!-- just-validate -->
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+    <!-- flatpickr -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <!-- micromodal -->
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+    <!-- notyf -->
+    <script src="https://cdn.jsdelivr.net/npm/notyf/notyf.min.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../scripts/create-event-form.js"></script>
+  </body>
+</html>

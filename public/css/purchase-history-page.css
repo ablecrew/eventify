@@ -1,0 +1,227 @@
+/* Purchase History Page Styles */
+.purchase-history {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.purchase-history h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #1a1a1a;
+}
+
+/* Ticket List Styles */
+.ticket-list {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.ticket-item {
+  background: #f8f9fa;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-height: 180px;
+}
+
+.ticket-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.ticket-image {
+  width: 240px;
+  overflow: hidden;
+  border-radius: 16px 0 0 16px;
+  flex-shrink: 0;
+  display: flex;
+}
+
+.ticket-image img {
+  width: 100%;
+  height: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.ticket-details {
+  padding: 20px;
+  background: #f8f9fa;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ticket-header {
+  margin-bottom: 16px;
+}
+
+.event-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 8px 0;
+}
+
+.ticket-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.event-type {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+.ticket-type {
+  background: #3498db;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.purchase-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.purchase-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.ticket-price {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.download-btn {
+  background: transparent;
+  color: #007bff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.download-btn:hover {
+  background: rgba(0, 123, 255, 0.1);
+}
+
+.download-icon,
+.calendar-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 480px) {
+  .purchase-history {
+    padding: 10px;
+  }
+  
+  .purchase-history h1 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+  
+  .ticket-list {
+    gap: 15px;
+  }
+  
+  .ticket-item {
+    flex-direction: column;
+  }
+  
+  .ticket-image {
+    width: 100%;
+    height: 150px;
+    border-radius: 16px 16px 0 0;
+  }
+  
+  .ticket-details {
+    padding: 16px;
+    border-radius: 0 0 16px 16px;
+  }
+  
+  .ticket-header {
+    margin-bottom: 12px;
+  }
+  
+  .event-title {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+  
+  .ticket-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  
+  .event-type {
+    font-size: 0.85rem;
+  }
+  
+  .ticket-type {
+    font-size: 0.7rem;
+    padding: 3px 6px;
+  }
+  
+  .purchase-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .ticket-price {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .price {
+    font-size: 1.1rem;
+  }
+  
+  .download-btn {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .purchase-date {
+    font-size: 0.85rem;
+  }
+}

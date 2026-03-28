@@ -1,0 +1,148 @@
+<!-- navbar.html -->
+<nav id="main-navbar" class="navbar">
+  <!-- Desktop Navbar -->
+  <div class="navbar-section">
+    <div class="logo-navbar">
+      <a href="../pages/index.html">
+        <img class="logo-ticket" src="../assets/icons/ticket.png" />
+        <span>Eventify</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="navbar-section">
+    <ul class="nav-links">
+      <li>
+        <a href="../pages/index.html" class="nav-link" id="nav-home">Home</a>
+      </li>
+      <li>
+        <a href="../pages/dashboard.html" class="nav-link" id="nav-dashboard">
+          Dashboard
+        </a>
+      </li>
+      <li>
+        <a
+          href="../pages/create-event.html"
+          class="nav-link"
+          id="nav-create-event"
+        >
+          Create Event
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="navbar-section">
+    <ul class="nav-links-2">
+      <li>
+        <a href="../pages/wishlist.html" class="nav-link" id="nav-wishlist">
+          <img class="nav-icon" id="heart" src="../assets/icons/heart.png" />
+        </a>
+      </li>
+      <li>
+        <a
+          href="../pages/shopping-cart.html"
+          class="nav-link"
+          id="nav-shopping-cart"
+        >
+          <img class="nav-icon" src="../assets/icons/shopping-cart.png" />
+        </a>
+      </li>
+      <li>
+        <div class="dropdown">
+          <button class="dropdown-button" id="dropdownButton">
+            <img
+              class="nav-icon"
+              id="dropdownContent"
+              src="../assets/icons/user.png"
+            />
+          </button>
+          <div class="dropdown-content">
+            <a class="nav-link" id="nav-sign-up" href="../pages/sign-up.html"
+              >Sign Up</a
+            >
+            <hr />
+            <a class="nav-link" id="nav-sign-in" href="../pages/sign-in.html"
+              >Sign In</a
+            >
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Mobile Menu Toggle Button -->
+  <button class="mobile-menu-toggle" id="mobileMenuToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- Mobile Navbar (Hidden by default) -->
+<div class="mobile-navbar" id="mobileNavbar">
+  <div class="mobile-navbar-header">
+    <div class="logo-navbar">
+      <a href="../pages/index.html">
+        <img class="logo-ticket" src="../assets/icons/ticket.png" />
+        <span>Eventify</span>
+      </a>
+    </div>
+    <button class="mobile-close-btn" id="mobileCloseBtn">×</button>
+  </div>
+
+  <ul class="mobile-nav-links">
+    <li>
+      <a href="../pages/index.html" class="nav-link" id="mobile-nav-home"
+        >Home</a
+      >
+    </li>
+    <li>
+      <a
+        href="../pages/dashboard.html"
+        class="nav-link"
+        id="mobile-nav-dashboard"
+      >
+        Dashboard
+      </a>
+    </li>
+    <li>
+      <a
+        href="../pages/create-event.html"
+        class="nav-link"
+        id="mobile-nav-create-event"
+      >
+        Create Event
+      </a>
+    </li>
+    <li>
+      <a
+        href="../pages/wishlist.html"
+        class="nav-link"
+        id="mobile-nav-wishlist"
+      >
+        Wishlist
+      </a>
+    </li>
+    <li>
+      <a
+        href="../pages/shopping-cart.html"
+        class="nav-link"
+        id="mobile-nav-cart"
+      >
+        Cart
+      </a>
+    </li>
+    <hr>
+    <li class="mobile-auth-list-1">
+      <a class="nav-link" id="mobile-nav-sign-up" href="../pages/sign-up.html">
+        Sign Up
+      </a>
+    </li>
+    <li class="mobile-auth-list-2">
+      <a class="nav-link" id="mobile-nav-sign-in" href="../pages/sign-in.html">
+        Sign In
+      </a>
+    </li>
+  </ul>
+</div>

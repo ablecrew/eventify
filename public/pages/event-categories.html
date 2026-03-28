@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Eventify | Events</title>
+    <link rel="icon" href="../favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../main.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="../css/event-categories-page.css"
+    />
+    <!-- notyf -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notyf/notyf.min.css"
+    />
+    <script type="module" src="../main.js"></script>
+    <script type="module" src="../scripts/event-categories.js"></script>
+  </head>
+  <body>
+    <div id="navbar-container"></div>
+
+    <header class="header">
+      <section class="event-categories">
+        <a href="event-categories.html?category=concert">Concerts</a>
+        <a href="event-categories.html?category=art">Art</a>
+        <a href="event-categories.html?category=comedy">Comedy</a>
+        <a href="event-categories.html?category=auto_show">Auto Shows</a>
+        <a href="event-categories.html?category=food_drink">Food &amp; Drinks</a>
+        <a href="event-categories.html?category=festival">Festivals</a>
+      </section>
+    </header>
+
+    <main>
+      <section class="events-section">
+        <h2 id="event-count" class="event-section-title">Available events: </h2>
+        <div class="events-grid" id="events-container">
+          <!-- Event cards will be dynamically inserted here -->
+          <!-- Loading placeholder can be shown initially -->
+          <div class="event-card">
+            <div class="skeleton-image skeleton"></div>
+            <div class="skeleton-details">
+              <div class="skeleton-title skeleton"></div>
+              <div class="skeleton-category skeleton"></div>
+              <div class="skeleton-info">
+                <div class="skeleton-date">
+                  <div class="skeleton-month skeleton"></div>
+                  <div class="skeleton-day skeleton"></div>
+                </div>
+                <div class="skeleton-location-time">
+                  <div class="skeleton-location skeleton"></div>
+                  <div class="skeleton-time skeleton"></div>
+                </div>
+              </div>
+              <div class="skeleton-price-section">
+                <div class="skeleton-price skeleton"></div>
+                <div class="skeleton-view skeleton"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-card">
+            <div class="skeleton-image skeleton"></div>
+            <div class="skeleton-details">
+              <div class="skeleton-title skeleton"></div>
+              <div class="skeleton-category skeleton"></div>
+              <div class="skeleton-info">
+                <div class="skeleton-date">
+                  <div class="skeleton-month skeleton"></div>
+                  <div class="skeleton-day skeleton"></div>
+                </div>
+                <div class="skeleton-location-time">
+                  <div class="skeleton-location skeleton"></div>
+                  <div class="skeleton-time skeleton"></div>
+                </div>
+              </div>
+              <div class="skeleton-price-section">
+                <div class="skeleton-price skeleton"></div>
+                <div class="skeleton-view skeleton"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-card">
+            <div class="skeleton-image skeleton"></div>
+            <div class="skeleton-details">
+              <div class="skeleton-title skeleton"></div>
+              <div class="skeleton-category skeleton"></div>
+              <div class="skeleton-info">
+                <div class="skeleton-date">
+                  <div class="skeleton-month skeleton"></div>
+                  <div class="skeleton-day skeleton"></div>
+                </div>
+                <div class="skeleton-location-time">
+                  <div class="skeleton-location skeleton"></div>
+                  <div class="skeleton-time skeleton"></div>
+                </div>
+              </div>
+              <div class="skeleton-price-section">
+                <div class="skeleton-price skeleton"></div>
+                <div class="skeleton-view skeleton"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-card">
+            <div class="skeleton-image skeleton"></div>
+            <div class="skeleton-details">
+              <div class="skeleton-title skeleton"></div>
+              <div class="skeleton-category skeleton"></div>
+              <div class="skeleton-info">
+                <div class="skeleton-date">
+                  <div class="skeleton-month skeleton"></div>
+                  <div class="skeleton-day skeleton"></div>
+                </div>
+                <div class="skeleton-location-time">
+                  <div class="skeleton-location skeleton"></div>
+                  <div class="skeleton-time skeleton"></div>
+                </div>
+              </div>
+              <div class="skeleton-price-section">
+                <div class="skeleton-price skeleton"></div>
+                <div class="skeleton-view skeleton"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-card">
+            <div class="skeleton-image skeleton"></div>
+            <div class="skeleton-details">
+              <div class="skeleton-title skeleton"></div>
+              <div class="skeleton-category skeleton"></div>
+              <div class="skeleton-info">
+                <div class="skeleton-date">
+                  <div class="skeleton-month skeleton"></div>
+                  <div class="skeleton-day skeleton"></div>
+                </div>
+                <div class="skeleton-location-time">
+                  <div class="skeleton-location skeleton"></div>
+                  <div class="skeleton-time skeleton"></div>
+                </div>
+              </div>
+              <div class="skeleton-price-section">
+                <div class="skeleton-price skeleton"></div>
+                <div class="skeleton-view skeleton"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-card">
+            <div class="skeleton-image skeleton"></div>
+            <div class="skeleton-details">
+              <div class="skeleton-title skeleton"></div>
+              <div class="skeleton-category skeleton"></div>
+              <div class="skeleton-info">
+                <div class="skeleton-date">
+                  <div class="skeleton-month skeleton"></div>
+                  <div class="skeleton-day skeleton"></div>
+                </div>
+                <div class="skeleton-location-time">
+                  <div class="skeleton-location skeleton"></div>
+                  <div class="skeleton-time skeleton"></div>
+                </div>
+              </div>
+              <div class="skeleton-price-section">
+                <div class="skeleton-price skeleton"></div>
+                <div class="skeleton-view skeleton"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer-container"></div>
+    <script src="https://cdn.jsdelivr.net/npm/notyf/notyf.min.js"></script>
+  </body>
+</html>

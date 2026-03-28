@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Eventify | Check Out</title>
+    <link rel="icon" href="../favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../main.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="../css/check-out-page.css"
+    />
+    <!-- notyf -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notyf/notyf.min.css"
+    />
+    <script type="module" src="../main.js"></script>
+  </head>
+  <body>
+    <div id="navbar-container"></div>
+
+    <main>
+      <div class="checkout-container">
+        <div class="checkout-header">
+          <h1>Payment</h1>
+        </div>
+
+        <div class="checkout-content">
+          <div class="order-summary">
+            <h2>Summary</h2>
+
+            <!-- Loading state - shown initially -->
+            <div class="checkout-loading" id="checkout-loading">
+              <div class="loading-spinner"></div>
+              <p>Loading your cart...</p>
+            </div>
+
+            <!-- Empty state - shown when cart is empty -->
+            <div
+              class="empty-cart-state"
+              id="empty-cart-state"
+              style="display: none"
+            >
+              <div class="empty-cart-icon">
+                <img src="../assets/icons/empty-cart.png" />
+              </div>
+              <h3>Your cart is empty</h3>
+              <p>Looks like you haven't added any events to your cart yet.</p>
+              <a href="./index.html" class="browse-events-btn">Browse Events</a>
+            </div>
+
+            <!-- Cart items container - populated dynamically -->
+            <div class="checkout-items-container" id="checkout-items-container">
+              <!-- Cart items will be inserted here by JavaScript -->
+            </div>
+
+            <div
+              class="checkout-breakdown-container"
+              id="checkout-breakdown-container"
+            >
+              <div class="order-breakdown">
+                <div class="breakdown-item">
+                  <span>Subtotal</span>
+                  <span>Ksh 0</span>
+                </div>
+                <div class="breakdown-item">
+                  <span>Estimated Tax</span>
+                  <span>Ksh 0</span>
+                </div>
+                <div class="breakdown-item">
+                  <span>Service Fee</span>
+                  <span>Ksh 0</span>
+                </div>
+                <div class="breakdown-item total">
+                  <span>Total</span>
+                  <span>Ksh 0</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="payment-section">
+            <h2>Payment</h2>
+
+            <div class="payment-methods">
+              <div class="payment-option active">
+                <span>Credit Card</span>
+              </div>
+              <div class="payment-option">
+                <span>M-Pesa</span>
+              </div>
+              <div class="payment-option">
+                <span>PayPal</span>
+              </div>
+            </div>
+
+            <div class="credit-card">
+              <img src="../assets/icons/credit-card.png" />
+            </div>
+
+            <div class="form-group">
+              <label for="cardholder-name">Cardholder Name</label>
+              <input
+                type="text"
+                id="cardholder-name"
+                placeholder="Enter cardholder name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="card-number">Card Number</label>
+              <input
+                type="text"
+                id="card-number"
+                placeholder="1234 5678 9012 3456"
+              />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="expiry">Expiry Date</label>
+                <input type="text" id="expiry" placeholder="MM/YY" />
+              </div>
+              <div class="form-group">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" placeholder="123" />
+              </div>
+            </div>
+
+            <div class="action-buttons">
+              <button class="btn-back">Back</button>
+              <button class="btn-pay">Pay</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="footer-container"></div>
+    <script type="module" src="../scripts/checkout.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf/notyf.min.js"></script>
+     <!-- SweetAlert2 -->
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>

@@ -1,0 +1,316 @@
+/* 
+MARK: Main styles
+*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.image-mobile {
+  display: none;
+}
+
+/* 
+MARK: Left side styles
+*/
+.left {
+  flex: 3;
+  color: white;
+  position: relative;
+}
+
+.left::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.7)
+  );
+}
+
+.left-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  padding: 60px 40px;
+  margin-left: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo {
+  font-size: 50px;
+  font-weight: bold;
+  color: var(--primary);
+  margin-bottom: 40px;
+  align-items: center;
+  display: flex;
+}
+
+.logo a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logo-ticket {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.logo-mobile {
+  display: none;
+}
+
+.logo-mobile a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.tagline {
+  font-size: 38px;
+  font-weight: bold;
+  line-height: 1.2;
+  max-width: 500px;
+}
+
+/* 
+MARK: Righ side styles
+*/
+.right {
+  flex: 4;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 45px 0 0 45px;
+  padding: 40px;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 60%;
+}
+
+.form-heading {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+.form-group {
+  margin-bottom: 28px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  color: #444;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+.password-field {
+  position: relative;
+}
+
+.password-field input {
+  padding-right: 40px;
+}
+
+.eye-icon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 22px;
+  height: 22px;
+  opacity: 0.6;
+}
+
+.eye-icon:hover {
+  opacity: 1;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  background: #262338;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.submit-btn:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+  color: #555;
+  font-size: 18px;
+}
+
+.login-link a {
+  text-decoration: none;
+  color: #262338;
+  font-weight: 600;
+}
+
+@media (max-width: 1400px) {
+  .tagline {
+    font-size: 36px;
+  }
+
+  .left-content {
+    margin-left: 0;
+  }
+
+  .form-heading {
+    font-size: 34px;
+  }
+
+  .form-input {
+    font-size: 18px;
+  }
+
+  .form-group {
+    margin-bottom: 22px;
+  }
+
+  .form-label {
+    font-size: 18px;
+  }
+
+  .submit-btn {
+    font-size: 18px;
+  }
+
+  .login-link {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1045px) {
+  body {
+    height: 120vh;
+    overflow: visible;
+  }
+
+  .left {
+    display: none;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .image-mobile {
+    display: block;
+    width: 100%;
+    height: 20%;
+  }
+
+  .right {
+    flex: 1;
+    border-radius: 0;
+  }
+
+  .form-container {
+    max-width: 500px;
+  }
+
+  .form-heading {
+    font-size: 32px;
+  }
+
+  .form-input {
+    font-size: 16px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-label {
+    font-size: 16px;
+  }
+
+  .submit-btn {
+    font-size: 16px;
+  }
+
+  .login-link {
+    font-size: 16px;
+  }
+
+  .logo-mobile .logo-ticket {
+    height: 48px;
+  }
+
+  .logo-mobile {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: 50px;
+    align-items: center;
+    display: flex;
+  }
+}
+
+/* 
+MARK: Spinner styles
+*/
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}

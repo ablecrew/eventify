@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Eventify | Dashboard</title>
+    <link rel="icon" href="../favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../main.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="../css/dashboard-page.css"
+    />
+    <!-- notyf -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notyf/notyf.min.css"
+    />
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script type="module" src="../main.js"></script>
+  </head>
+  <body>
+    <div id="navbar-container"></div>
+
+    <main>
+      <div class="dashboard-container">
+        <!-- Header Section -->
+        <div class="header">
+          <div class="welcome-section">
+            <div class="welcome-badge">
+              <img src="../assets/icons/wave-hand.png" alt="Wave"/> Welcome
+              back
+            </div>
+            <div class="greeting">
+              <div class="skeleton skeleton-greeting"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon skeleton skeleton-icon"></div>
+            <div class="stat-content">
+              <div class="skeleton skeleton-stat-value"></div>
+              <div class="skeleton skeleton-stat-label"></div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon skeleton skeleton-icon"></div>
+            <div class="stat-content">
+              <div class="skeleton skeleton-stat-value"></div>
+              <div class="skeleton skeleton-stat-label"></div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon skeleton skeleton-icon"></div>
+            <div class="stat-content">
+              <div class="skeleton skeleton-stat-value"></div>
+              <div class="skeleton skeleton-stat-label"></div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon skeleton skeleton-icon"></div>
+            <div class="stat-content">
+              <div class="skeleton skeleton-stat-value"></div>
+              <div class="skeleton skeleton-stat-label"></div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon skeleton skeleton-icon"></div>
+            <div class="stat-content">
+              <div class="skeleton skeleton-stat-value"></div>
+              <div class="skeleton skeleton-stat-label"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="charts-grid">
+          <div class="chart-card">
+            <div class="chart-header">
+              <div class="skeleton skeleton-chart-title"></div>
+              <div class="skeleton skeleton-chart-filter"></div>
+            </div>
+            <div class="chart-container">
+              <div class="skeleton skeleton-chart"></div>
+            </div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-header">
+              <div class="skeleton skeleton-chart-title"></div>
+              <div class="customer-stat">
+                <div class="skeleton skeleton-percentage"></div>
+                <div class="skeleton skeleton-trend"></div>
+              </div>
+            </div>
+            <div class="chart-container">
+              <div class="skeleton skeleton-chart"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Events Table -->
+        <div class="table-section">
+          <div class="table-header">
+            <h3>Product Sell</h3>
+            <select class="table-filter">
+              <option>Last 30 days</option>
+              <option>Last 7 days</option>
+              <option>Last 90 days</option>
+            </select>
+          </div>
+          <div class="table-container">
+            <table class="events-table">
+              <thead>
+                <tr>
+                  <th>Event Image</th>
+                  <th>Event</th>
+                  <th>Stock</th>
+                  <th>Price</th>
+                  <th>Total Sales</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><div class="skeleton skeleton-event-image"></div></td>
+                  <td>
+                    <div class="skeleton skeleton-event-name"></div>
+                    <div class="skeleton skeleton-event-category"></div>
+                  </td>
+                  <td><div class="skeleton skeleton-stock"></div></td>
+                  <td><div class="skeleton skeleton-price"></div></td>
+                  <td><div class="skeleton skeleton-sales"></div></td>
+                  <td><div class="skeleton skeleton-action"></div></td>
+                </tr>
+                <tr>
+                  <td><div class="skeleton skeleton-event-image"></div></td>
+                  <td>
+                    <div class="skeleton skeleton-event-name"></div>
+                    <div class="skeleton skeleton-event-category"></div>
+                  </td>
+                  <td><div class="skeleton skeleton-stock"></div></td>
+                  <td><div class="skeleton skeleton-price"></div></td>
+                  <td><div class="skeleton skeleton-sales"></div></td>
+                  <td><div class="skeleton skeleton-action"></div></td>
+                </tr>
+                <tr>
+                  <td><div class="skeleton skeleton-event-image"></div></td>
+                  <td>
+                    <div class="skeleton skeleton-event-name"></div>
+                    <div class="skeleton skeleton-event-category"></div>
+                  </td>
+                  <td><div class="skeleton skeleton-stock"></div></td>
+                  <td><div class="skeleton skeleton-price"></div></td>
+                  <td><div class="skeleton skeleton-sales"></div></td>
+                  <td><div class="skeleton skeleton-action"></div></td>
+                </tr>
+                <tr>
+                  <td><div class="skeleton skeleton-event-image"></div></td>
+                  <td>
+                    <div class="skeleton skeleton-event-name"></div>
+                    <div class="skeleton skeleton-event-category"></div>
+                  </td>
+                  <td><div class="skeleton skeleton-stock"></div></td>
+                  <td><div class="skeleton skeleton-price"></div></td>
+                  <td><div class="skeleton skeleton-sales"></div></td>
+                  <td><div class="skeleton skeleton-action"></div></td>
+                </tr>
+                <tr>
+                  <td><div class="skeleton skeleton-event-image"></div></td>
+                  <td>
+                    <div class="skeleton skeleton-event-name"></div>
+                    <div class="skeleton skeleton-event-category"></div>
+                  </td>
+                  <td><div class="skeleton skeleton-stock"></div></td>
+                  <td><div class="skeleton skeleton-price"></div></td>
+                  <td><div class="skeleton skeleton-sales"></div></td>
+                  <td><div class="skeleton skeleton-action"></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="footer-container"></div>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf/notyf.min.js"></script>
+    <script type="module" src="../scripts/dashboard.js"></script>
+  </body>
+</html>
